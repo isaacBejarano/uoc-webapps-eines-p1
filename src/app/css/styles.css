@@ -1,10 +1,10 @@
 /* Colors of the Pharaohs */
 :root {
-	--color-primary: #C0AE60;
-	--color-primary-shade: #8C7F46;
-	--color-secondary: #5B89DE;
+	--color-primary: #c0ae60;
+	--color-primary-shade: #8c7f46;
+	--color-secondary: #5b89de;
 	--color-secondary-shade: #4363b4;
-	--color-ternary: #376C86;
+	--color-ternary: #376c86;
 	--color-ternary-shade: #1f2937;
 	--color-white: gainsboro;
 	--color-black: #090829;
@@ -41,7 +41,7 @@ body {
 }
 
 h1 {
-	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-family: Georgia, "Times New Roman", Times, serif;
 	letter-spacing: 1.5;
 	margin-bottom: 1.5rem;
 	font-size: medium;
@@ -117,15 +117,13 @@ blockquote:has(.inner-blockquote) + p {
 }
 
 @media screen and (min-width: 1920px) {
-
 	.route-list,
 	.route-link {
-		font-size: medium
+		font-size: medium;
 	}
 }
 
 @media screen and (min-width: 3840px) {
-
 	.route-list,
 	.route-link {
 		font-size: x-large;
@@ -140,7 +138,7 @@ p:not(blockquote + p) {
 	margin-top: 0;
 
 	@media screen and (min-width: 1920px) {
-		font-size: medium
+		font-size: medium;
 	}
 
 	@media screen and (min-width: 3840px) {
@@ -156,7 +154,7 @@ figure {
 
 	.responsive-iframe-wrapper {
 		border: 1px solid var(--color-primary-shade);
-		border-radius: .3rem;
+		border-radius: 0.3rem;
 		position: relative;
 		overflow: hidden;
 		width: 100%;
@@ -176,7 +174,7 @@ figure {
 
 	img {
 		display: block;
-		border-radius: .3rem;
+		border-radius: 0.3rem;
 	}
 
 	> figcaption {
@@ -225,7 +223,6 @@ h3 {
 }
 
 @media only screen and (min-width: 1920px) {
-
 	.header,
 	.index,
 	.reference,
@@ -237,7 +234,6 @@ h3 {
 }
 
 @media only screen and (min-width: 2560px) {
-
 	.header,
 	.index,
 	.reference,
@@ -303,9 +299,9 @@ p {
 
 	&::after {
 		/* &vrtri; */
-		content: '\22B3';
+		content: "\22B3";
 		color: var(--color-secondary);
-		margin-left: .3rem;
+		margin-left: 0.3rem;
 	}
 }
 
@@ -317,9 +313,9 @@ p {
 
 	&::after {
 		/* &vrtri; */
-		content: '\22B3';
+		content: "\22B3";
 		color: var(--color-primary);
-		margin-left: .3rem;
+		margin-left: 0.3rem;
 	}
 
 	&:hover {
@@ -349,7 +345,7 @@ p {
 
 		&::after {
 			color: var(--color-secondary);
-			margin-left: .3rem;
+			margin-left: 0.3rem;
 		}
 	}
 }
@@ -376,16 +372,16 @@ p {
 		}
 
 		h2 {
-			margin-bottom: .5rem;
+			margin-bottom: 0.5rem;
 			font-size: small;
 
 			@media screen and (min-width: 810px) {
 				font-size: medium;
-				margin-bottom: .3rem;
+				margin-bottom: 0.3rem;
 			}
 
 			@media screen and (min-width: 1920px) {
-				margin-bottom: .5rem;
+				margin-bottom: 0.5rem;
 				font-size: larger;
 			}
 
@@ -403,8 +399,8 @@ p {
 
 			&::after {
 				/* &nearr; */
-				content: '\2197';
-				margin-left: .3em;
+				content: "\2197";
+				margin-left: 0.3em;
 			}
 		}
 	}
@@ -413,8 +409,8 @@ p {
 .link-standalone {
 	&::after {
 		/* &nearr; */
-		content: '\2197';
-		margin-left: .3em;
+		content: "\2197";
+		margin-left: 0.3em;
 	}
 }
 
@@ -425,7 +421,6 @@ nav.index {
 }
 
 main.index {
-
 	blockquote,
 	blockquote + p,
 	h1 {
@@ -438,9 +433,9 @@ main.index {
 
 	article {
 		border: 1px solid var(--color-primary-shade);
-		border-radius: .3rem;
+		border-radius: 0.3rem;
 		padding: 1rem;
-		background-image: url('/src/assets/img/dunes_1920.jpg');
+		background-image: url("/src/assets/img/dunes_1920.jpg");
 		background-repeat: no-repeat;
 		background-size: 124%;
 		background-position-y: -13rem;
@@ -481,9 +476,9 @@ main.index {
 
 		ul {
 			border: 1px solid var(--color-secondary-shade);
-			border-radius: .3rem;
+			border-radius: 0.3rem;
 			padding: 1rem;
-			background-image: url('/src/assets/img/dunes_1920.jpg');
+			background-image: url("/src/assets/img/dunes_1920.jpg");
 			background-color: var(--color-black);
 			background-blend-mode: luminosity;
 			background-repeat: no-repeat;
@@ -495,15 +490,14 @@ main.index {
 
 			li {
 				border: 1px solid var(--color-secondary);
-				border-radius: 1rem .2rem .2rem;
+				border-radius: 1rem 0.2rem 0.2rem;
 				padding: 0.3rem;
 				color: var(--color-white);
 				background-color: var(--color-secondary-shade);
 				width: 100%;
 				position: absolute;
 				max-width: 314px;
-				box-shadow: inset -4px 4px 10px var(--color-secondary),
-					0px 0px 10px var(--color-black);
+				box-shadow: inset -4px 4px 10px var(--color-secondary), 0px 0px 10px var(--color-black);
 
 				@media screen and (min-width: 810px) {
 					max-width: 734px;
@@ -547,7 +541,6 @@ main.index {
 					}
 
 					&:active {
-
 						& > span:last-child,
 						& > span:first-child {
 							color: var(--color-black);
@@ -663,7 +656,7 @@ main.index {
 	& article {
 		background-color: var(--color-black);
 		padding: 1.5rem;
-		border-radius: .3rem;
+		border-radius: 0.3rem;
 		margin-top: 1rem;
 		/* anime */
 		animation-name: rising-sun;
@@ -735,8 +728,7 @@ main.index {
 	.hero-title {
 		color: var(--color-primary);
 		text-align: center;
-		text-shadow: 5px 3px 5px var(--color-primary-shade),
-			-1px -1px 4px var(--color-primary-shade);
+		text-shadow: 5px 3px 5px var(--color-primary-shade), -1px -1px 4px var(--color-primary-shade);
 		letter-spacing: 2;
 		margin-left: 1rem;
 	}
@@ -748,8 +740,8 @@ main.index {
 
 	&::before {
 		/* &vltri; */
-		content: '\22B2';
-		margin-right: .3rem;
+		content: "\22B2";
+		margin-right: 0.3rem;
 		color: var(--color-secondary);
 	}
 }
@@ -776,7 +768,8 @@ main.index {
 		}
 
 		span:has(small) {
-			color: var(--color-primary);
+			/* color: var(--color-primary); */
+			color: cadetblue;
 			display: block;
 			text-align: center;
 			font-size: x-small;
