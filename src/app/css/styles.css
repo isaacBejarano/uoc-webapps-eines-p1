@@ -768,8 +768,7 @@ main.index {
 		}
 
 		span:has(small) {
-			/* color: var(--color-primary); */
-			color: cadetblue;
+			color: var(--color-primary);
 			display: block;
 			text-align: center;
 			font-size: x-small;
