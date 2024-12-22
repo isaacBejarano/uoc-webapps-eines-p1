@@ -26,6 +26,13 @@ html {
 	}
 }
 
+body {
+	/* overflow-y: scroll; */
+	/* scrollbar-gutter: stable; */
+	width: 100vw;
+	/* vs. scrollbar-y gutter */
+}
+
 :is(ul, ol) {
 	list-style: none;
 }
@@ -87,10 +94,9 @@ main:where(.article, .about, .references) [href] {
 		max-width: 810px;
 		width: 1080px;
 	} */
-	@media only screen and (min-width: 1920px) {
+	/* @media only screen and (min-width: 1920px) {
 		max-width: 1080px;
-	}
-
+	} */
 	@media only screen and (min-width: 2560px) {
 		max-width: 1920px;
 	}
@@ -645,7 +651,8 @@ main.index {
 				}
 
 				@media only screen and (min-width: 1920px) {
-					max-width: 1034px;
+					/* max-width: 1034px; */
+					max-width: 100%;
 				}
 
 				@media only screen and (min-width: 2560px) {
