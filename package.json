@@ -19,5 +19,13 @@
 		"postcss-custom-properties": "^14.0.4",
 		"posthtml-include": "^2.0.1",
 		"rimraf": "^6.0.1"
-	}
+	},	
+  "browserslist": [
+  	"defaults",
+  	"dead",
+  	"> 0.2%"
+	],
+	"engines": {
+    "node": "20 || >=22"
+  }
 }
