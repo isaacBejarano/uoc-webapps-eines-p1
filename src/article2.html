@@ -2,15 +2,19 @@
 <html lang="en">
 <include src="src/app/includes/head.html"> </include>
 
-<body>
+<body class="pag-article-2">
 	<include src="src/app/includes/header.html"> </include>
+	<include src="src/app/includes/nav.html"> </include>
+	<nav>
+		<p>Related articles: </p>
+		<ul class="route-list">
+			<li>
+				<a href="article1.html" class="route-link">Sand bread</a>
+			</li>
+		</ul>
+	</nav>
 
 	<main class="article">
-		<nav>
-			<include src="src/app/includes/back-btn.html"> </include>
-			<include src="src/app/includes/back-btn-cat.html"> </include>
-		</nav>
-
 		<article>
 			<h1>Ceremony of tea in the Sahara</h1>
 
@@ -157,16 +161,10 @@
 				</div>
 
 			</div>
-
-			<nav>
-				<ul class="route-list">
-					<li>
-						<a href="article1.html" class="route-link">Sand bread</a>
-					</li>
-				</ul>
-			</nav>
 		</article>
 	</main>
+
+	<include src="src/app/includes/footer.html"> </include>
 </body>
 
 </html>

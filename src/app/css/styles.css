@@ -1,4 +1,4 @@
-/* Colors of the Pharaohs */
+/* Colors Palette */
 :root {
 	--color-primary: #c0ae60;
 	--color-primary-shade: #8c7f46;
@@ -94,22 +94,6 @@ blockquote:has(.inner-blockquote) + p {
 	}
 }
 
-.back-btn {
-	font-size: small;
-
-	@media screen and (min-width: 810px) {
-		font-size: medium;
-	}
-
-	@media screen and (min-width: 1920px) {
-		font-size: large;
-	}
-
-	@media screen and (min-width: 3840px) {
-		font-size: x-large;
-	}
-}
-
 .route-list,
 .route-link {
 	font-size: small;
@@ -117,6 +101,7 @@ blockquote:has(.inner-blockquote) + p {
 }
 
 @media screen and (min-width: 1920px) {
+
 	.route-list,
 	.route-link {
 		font-size: medium;
@@ -124,6 +109,7 @@ blockquote:has(.inner-blockquote) + p {
 }
 
 @media screen and (min-width: 3840px) {
+
 	.route-list,
 	.route-link {
 		font-size: x-large;
@@ -223,6 +209,7 @@ h3 {
 }
 
 @media only screen and (min-width: 1920px) {
+
 	.header,
 	.index,
 	.reference,
@@ -234,6 +221,7 @@ h3 {
 }
 
 @media only screen and (min-width: 2560px) {
+
 	.header,
 	.index,
 	.reference,
@@ -302,24 +290,6 @@ p {
 		content: "\22B3";
 		color: var(--color-secondary);
 		margin-left: 0.3rem;
-	}
-}
-
-.top-5-link {
-	color: var(--color-white);
-	line-height: 1.75;
-	padding-left: 0;
-	list-style: none;
-
-	&::after {
-		/* &vrtri; */
-		content: "\22B3";
-		color: var(--color-primary);
-		margin-left: 0.3rem;
-	}
-
-	&:hover {
-		color: var(--color-primary);
 	}
 }
 
@@ -421,6 +391,7 @@ nav.index {
 }
 
 main.index {
+
 	blockquote,
 	blockquote + p,
 	h1 {
@@ -541,6 +512,7 @@ main.index {
 					}
 
 					&:active {
+
 						& > span:last-child,
 						& > span:first-child {
 							color: var(--color-black);
@@ -672,6 +644,76 @@ main.index {
 	}
 }
 
+/* Layout */
+.header {
+	/* border: 1px solid var(--color-primary-shade); */
+	display: flex;
+	align-items: center;
+
+	img {
+		border: 1px solid var(--color-primary-shade);
+	}
+
+	.hero-title {
+		color: var(--color-primary);
+		text-align: center;
+		text-shadow: 5px 3px 5px var(--color-primary-shade), -1px -1px 4px var(--color-primary-shade);
+		letter-spacing: 2;
+		margin-left: 1rem;
+	}
+}
+
+.footer {
+	outline: 1px solid red;
+	width: 100%;
+	background: linear-gradient(0deg, var(--color-primary-shade) 1%, var(--color-black) 45%, var(--color-black) 100%);
+
+	@media screen and (min-width: 810px) {
+		position: fixed;
+		bottom: 0;
+	}
+
+	.wrapper {
+		margin: 0 auto;
+		padding: 1rem;
+
+		@media only screen and (min-width: 1920px) {
+			width: 1080px;
+		}
+
+		@media only screen and (min-width: 2560px) {
+			width: 1920px;
+		}
+
+		p:has(abbr) {
+			color: var(--color-primary);
+			display: block;
+			text-align: center;
+			font-size: x-small;
+
+			@media screen and (min-width: 810px) {
+				font-size: small;
+			}
+
+			@media only screen and (min-width: 1920px) {
+				font-size: medium;
+			}
+
+			@media only screen and (min-width: 2560px) {
+				font-size: large;
+			}
+		}
+	}
+}
+
+main {
+	outline: 1px solid red;
+}
+
+nav.nav-list {
+	outline: 1px solid red;
+}
+
 /* Responsive Layout */
 .columns-md {
 	@media screen and (min-width: 810px) {
@@ -711,79 +753,6 @@ main.index {
 		> div:nth-child(1):has(h2:nth-child(1)) + div:has(p:nth-child(1)) > p:first-child,
 		> div:nth-child(1):has(h2:nth-child(1)) + div:has(figure:nth-child(1)) > figure:first-child {
 			margin-top: 7rem;
-		}
-	}
-}
-
-/* Includes */
-.header {
-	/* border: 1px solid var(--color-primary-shade); */
-	display: flex;
-	align-items: center;
-
-	img {
-		border: 1px solid var(--color-primary-shade);
-	}
-
-	.hero-title {
-		color: var(--color-primary);
-		text-align: center;
-		text-shadow: 5px 3px 5px var(--color-primary-shade), -1px -1px 4px var(--color-primary-shade);
-		letter-spacing: 2;
-		margin-left: 1rem;
-	}
-}
-
-.back-btn {
-	margin-bottom: 0.5rem;
-	margin-right: 0.8rem;
-
-	&::before {
-		/* &vltri; */
-		content: "\22B2";
-		margin-right: 0.3rem;
-		color: var(--color-secondary);
-	}
-}
-
-.footer {
-	width: 100%;
-	background: linear-gradient(0deg, var(--color-primary-shade) 1%, var(--color-black) 45%, var(--color-black) 100%);
-
-	@media screen and (min-width: 810px) {
-		position: fixed;
-		bottom: 0;
-	}
-
-	.wrapper {
-		margin: 0 auto;
-		padding: 1rem;
-
-		@media only screen and (min-width: 1920px) {
-			width: 1080px;
-		}
-
-		@media only screen and (min-width: 2560px) {
-			width: 1920px;
-		}
-
-		span:has(small) {
-			color: var(--color-primary);
-			display: block;
-			text-align: center;
-			font-size: x-small;
-
-			@media screen and (min-width: 810px) {
-				font-size: small;
-			}
-
-			@media only screen and (min-width: 1920px) {
-				font-size: medium;
-			}
-
-			@media only screen and (min-width: 2560px) {
-				font-size: large;
-			}
 		}
 	}
 }
