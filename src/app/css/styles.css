@@ -27,10 +27,9 @@ html {
 }
 
 body {
-	/* overflow-y: scroll; */
-	/* scrollbar-gutter: stable; */
-	width: 100vw;
-	/* vs. scrollbar-y gutter */
+	/* vs. scrollbar-y affecting viewport width */
+	min-width: 100vw;
+	overflow-x: hidden;
 }
 
 :is(ul, ol) {
