@@ -17,6 +17,52 @@ npm run build
 ```
  to compile the source code, apply all the preprocessors and save that distributable compilation in the folder "dist".
 
+# Parcel's built-in Post and Pre Processors
+Parcel comes with `PostCSS` and `PostHTML`. Those dependencies solve most of the pre and post-processing of CSS and HTML. However, some features are not included. If You need to add those features, you can use **PostCSS**  and **PostHTML** plugins, be defining them and configuing them in its respective configuraton files: **.postcssrc**, and **.posthtmlrc**. Just place the **plug-in** names in the `plugins` field -every member of that object should be a different plugin. Furthermore, every plugin defined, may have a nested object for configuration.
+
+For more informationon **PostCSS** configurations, please visit:
+https://parceljs.org/languages/css/#postcss
+and
+https://parceljs.org/languages/html/#posthtml
+
+
+# devDependencies
+
+These are the core dependencies for developing this project:
+- `npm-run-all`
+- `parcel`
+- `postcss-custom-properties`
+- `posthtml-include`
+- `rimraf`
+
+To configure them:
+
+## npm-run-all
+This dependency is useful to concatenate `npm` instructions. We're using this dependency to concatenate the cache clearing by the `rimraf` dependency and the `parcel` intructions for serving and building the app.
+
+## parcel
+We're using this **package bundler** to serve and compile our App. The bundler is already set up in the **package.json** `scripts` field. You don't need to add anything else. There're 2 scripts to run **Parcel** for serving ("parcel:dev": "parcel") and to compile the **distributable**, ("parcel:build": "parcel build").
+
+You don't have to modify any of those, for the main project's commands for serving and compiling are already set. Those will call these 2 Parcel-related scripts.
+
+In other words, you only need to use the npm commands `npm start` and `npm run buld`, as defined in the previous **NPM scripts** section.
+
+It is important, nevertheless, to avoid modifying th entry point as defined in the **source** field of the **package.json**. It points to the relative path `src/index.html`. If you ever reorder the project's folders, yo'll need to adjust this path in the **package.json** too, so that **Parcel** can know where the entry point of our app is located.
+
+## postcss-custom-properties
+This is a plug-in to be used by **PostCSS**. The configuratin is already setup to its default value `true`.
+
+This **plug-in** post-processes `CSS variables` so older browsers can undesratnd them. 
+
+## posthtml-include
+This is a plug-in to be used by **PostHTML**. The configuratin is already setup to its default value `{}`.
+
+This **plug-in** pre-processes `HTML files` in a `component` manner, using HTML injection, so you can use them in different part of your Application without repiting code.
+
+## rimraf
+This dependency will clear the cached files resulting from Parcel's compilation for production in the folder `dist`. 
+
+
 
 # Git Tags & Semver
 
