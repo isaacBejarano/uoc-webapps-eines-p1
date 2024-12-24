@@ -5,7 +5,7 @@
   --color-blue: royalblue;
   --color-red: rgb(113 2 2);
   --color-B: rgb(2, 45, 49);
-  --color-W: #rgb(248, 252, 252);
+  --color-W: rgb(248, 252, 252);
   --color-gold: #8c7f46;
   --color-light-grey: rgb(219, 235, 235);
   --color-grey: rgb(102, 124, 124);
@@ -161,10 +161,10 @@ body > header {
   > div {
     display: flex;
     align-items: center;
+    justify-content: center;
 
     img {
-      margin: 0.5rem 0.8rem;
-      margin-right: 1.2rem;
+      margin: 0.5rem 1.2rem;
       border-radius: 20%;
       border: 1px solid var(--color-primary);
     }
@@ -195,6 +195,7 @@ body > nav {
 
   > :where(ol, ul) {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     font-size: smaller;
 
@@ -282,11 +283,9 @@ body[class^="pag-article"] > nav:nth-of-type(2) {
 
 /* COMPO - footer */
 footer {
-  /* use vw for footer is detached from body position */
   width: 100vw;
   position: fixed;
   bottom: -1px;
-  z-index: 2;
   padding: 0.5rem 0;
   border: 1px solid var(--color-primary);
   border-radius: 5px 5px 0 0;
@@ -294,6 +293,7 @@ footer {
   text-align: center;
 
   p:has(abbr) {
+    margin-bottom: 0;
     color: var(--color-grey);
     display: block;
     text-align: center;
@@ -311,6 +311,24 @@ footer {
       font-size: large;
     }
   }
+}
+
+body.pag-index:has(footer) footer {
+  position: sticky;
+  bottom: -1px;
+  z-index: -3;
+
+  @media screen and (min-width: 1920px) {
+    position: fixed;
+    bottom: -1px;
+    z-index: 3;
+  }
+}
+
+body:not(.pag-index):has(footer) footer {
+  position: fixed;
+  bottom: -1px;
+  z-index: 3;
 }
 
 /* MAIN */
@@ -360,6 +378,222 @@ body > main:where(.categories, .article, .about, .references) {
 }
 
 /* MAIN - index */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-quote {
+  0% {
+    opacity: 0;
+  }
+
+  35% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-arrow {
+  0% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+body > main:where(.index) {
+  margin-bottom: 3rem;
+
+  article {
+    @media screen and (min-width: 2560px) {
+      max-width: var(--h-FullHD);
+    }
+
+    > header {
+      margin-top: -0.5rem;
+      position: relative;
+      z-index: -1;
+      height: 92vh;
+      margin-bottom: 0;
+      background-image: url("/src/assets/img/dunes_1920.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      @media screen and (min-width: 1920px) {
+        height: 86vh;
+      }
+
+      @media screen and (min-width: 2560px) {
+        height: 92vh;
+      }
+
+      > h1 {
+        position: absolute;
+        top: 15vh;
+        width: 100%;
+        color: var(--color-primary);
+        animation-name: fade-in;
+        animation-duration: 4s;
+        animation-fill-mode: forwards;
+        transition-timing-function: ease-in-out;
+        font-size: x-large;
+
+        @media screen and (min-width: 810px) {
+          font-size: xx-large;
+        }
+
+        @media screen and (min-width: 2560px) {
+          font-size: 3.5rem;
+        }
+      }
+
+      > div {
+        position: absolute;
+        top: 78vh;
+        width: 100%;
+        padding: 1rem 2rem;
+
+        @media screen and (min-width: 1920px) {
+          top: 73vh;
+        }
+
+        @media screen and (min-width: 2560px) {
+          top: 75vh;
+        }
+
+        p {
+          animation-name: fade-in-quote;
+          animation-duration: 8s;
+          animation-fill-mode: forwards;
+          transition-timing-function: ease-in-out;
+          color: var(--color-light-grey);
+          margin-bottom: 0;
+        }
+
+        blockquote {
+          margin-bottom: 1rem;
+        }
+
+        > div {
+          animation-name: fade-in-arrow;
+          animation-duration: 12s;
+          animation-fill-mode: forwards;
+          transition-timing-function: ease-in;
+          color: var(--color-light-grey);
+          text-align: right;
+          position: absolute;
+          bottom: 2vh;
+          right: 8vw;
+
+          @media screen and (min-width: 810px) {
+            bottom: 2vh;
+            right: 5vw;
+          }
+
+          @media screen and (min-width: 1920px) {
+            right: 2vw;
+          }
+
+          p {
+            display: block;
+            color: var(--color-light-W);
+            border: 1px solid var(--color-W);
+            border-radius: 100%;
+            z-index: 5;
+            cursor: pointer;
+            padding: 0.5rem 0.7rem;
+
+            @media screen and (min-width: 810px) {
+              padding: 0.5rem 0.8rem;
+            }
+
+            @media screen and (min-width: 2560px) {
+              padding: 0.5rem 0.9rem;
+            }
+          }
+        }
+      }
+    }
+
+    > section:first-of-type {
+      position: sticky;
+      bottom: 0;
+      z-index: -2;
+      color: var(--color-W);
+      background-color: var(--color-gold);
+      padding: 1rem 2rem;
+      border: 1px solid transparent;
+
+      @media screen and (min-width: 1920px) {
+        border-radius: 0 0 5px 5px;
+        margin-bottom: 1.2rem;
+      }
+
+      p:first-of-type {
+        margin-top: 1rem;
+      }
+    }
+
+    > section:last-of-type {
+      background-color: var(--color-W);
+      position: sticky;
+      /* Don't z-index here or links won't work */
+    }
+
+    > section {
+      padding: 2rem;
+
+      > h2 {
+        margin-bottom: 0.8rem;
+      }
+
+      nav ul {
+        list-style: initial;
+        margin-left: 1rem;
+
+        > li {
+          margin-bottom: 1rem;
+
+          &::marker {
+            color: var(--color-gold)
+          }
+
+          > [href] {
+            &::after {
+              content: "\2197";
+              margin-right: 0.2em;
+            }
+
+            > span:last-of-type {
+              color: var(--color-grey)
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 /* MAIN - article */
 /* MAIN - about */
 body > main:where(.article, .about) {
@@ -401,8 +635,6 @@ body > main:where(.article, .about) {
     }
 
     figure:has(iframe) {
-
-      /* background-color: palegreen; */
       .responsive-iframe {
         position: relative;
         overflow: hidden;
@@ -557,271 +789,3 @@ body > main.references {
     }
   }
 }
-
-/* debug */
-.red {
-  outline: 1px solid red;
-}
-
-/* Layout - mobile first (iPad max-width) */
-/* .columns-md {
-  @media screen and (min-width: 810px) {
-
-    display: flex;
-    gap: 1.5rem;
-
-    & > div {
-      flex: 1;
-    }
-    First element of left div is h2; First of right div is p or figure -> add margin-top to p
-    > div:nth-child(1):has(h2:nth-child(1)) + div:has(p:nth-child(1)) > p:first-child,
-    > div:nth-child(1):has(h2:nth-child(1)) + div:has(figure:nth-child(1)) > figure:first-child {
-      margin-top: 4rem;
-    }
-
-    First element of left div is p; First of right div is h2 -> remove margin-top to h2
-    > div:nth-child(1):has(p:nth-child(1)) + div:has(h2:nth-child(1)) > h2:first-child {
-      margin-top: 0;
-    }
-  }
-
-  @media screen and (min-width: 1920px) {
-    font-size: 3.5rem;
-
-    First element of left div is h2; First of right div is p -> add margin-top to p
-    > div:nth-child(1):has(h2:nth-child(1)) + div:has(p:nth-child(1)) > p:first-child,
-    > div:nth-child(1):has(h2:nth-child(1)) + div:has(figure:nth-child(1)) > figure:first-child {
-      margin-top: 5rem;
-    }
-  }
-
-  @media screen and (min-width: 2560px) {
-    font-size: 4rem;
-
-    First element of left div is h2; First of right div is p -> add margin-top to p
-    > div:nth-child(1):has(h2:nth-child(1)) + div:has(p:nth-child(1)) > p:first-child,
-    > div:nth-child(1):has(h2:nth-child(1)) + div:has(figure:nth-child(1)) > figure:first-child {
-      margin-top: 7rem;
-    }
-  }
-} */
-/* Page INDEX */
-/* p:not(.inner-blockquote),
-p:not(blockquote + p) {
-  font-size: small;
-  line-height: 1.5;
-  margin-top: 0;
-
-  @media screen and (min-width: 1920px) {
-    font-size: medium;
-  }
-
-  @media screen and (min-width: 2560px) {
-    font-size: x-large;
-  }
-} */
-/*
-blockquote > .inner-blockquote,
-blockquote:has(.inner-blockquote) + p {
-  font-size: medium;
-
-  @media screen and (min-width: 810px) {
-    font-size: large;
-  }
-
-  @media screen and (min-width: 1920px) {
-    font-size: x-large;
-  }
-
-  @media screen and (min-width: 2560px) {
-    font-size: xx-large;
-  }
-}
-
-main.index {
-  blockquote,
-  blockquote + p,
-  h1 {
-    text-align: center;
-  }
-
-  h1 {
-    margin-top: 2.5rem;
-  }
-
-  article {
-    border: 1px solid var(--color-primary-shade);
-    border-radius: 0.3rem;
-    padding: 1rem;
-    background-image: url("/src/assets/img/dunes_1920.jpg");
-    background-repeat: no-repeat;
-    background-size: 124%;
-    background-position-y: -13rem;
-    background-position-x: center;
-
-    @media screen and (min-width: 810px) {
-      background-size: cover;
-      background-position-y: -22rem;
-    }
-
-    @media screen and (min-width: 1920px) {
-      background-position-y: -30rem;
-    }
-
-    @media screen and (min-width: 2560px) {
-      background-position-y: -54rem;
-    }
-  }
-
-  nav {
-    margin-top: 2rem;
-
-    @media screen and (min-width: 810px) {
-      margin-top: 2.5rem;
-    }
-
-    @media screen and (min-width: 1920px) {
-      margin-top: 3rem;
-    }
-
-    @media screen and (min-width: 2560px) {
-      margin-top: 4rem;
-    }
-
-    ul {
-      border: 1px solid var(--color-secondary-shade);
-      border-radius: 0.3rem;
-      padding: 1rem;
-      background-image: url("/src/assets/img/dunes_1920.jpg");
-      background-color: var(--color-W);
-      background-blend-mode: luminosity;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      height: 220px;
-
-      li {
-        border: 1px solid var(--color-secondary);
-        border-radius: 1rem 0.2rem 0.2rem;
-        padding: 0.3rem;
-        color: var(--color-B);
-        background-color: var(--color-secondary-shade);
-        width: 100%;
-        position: absolute;
-        max-width: 314px;
-
-        @media screen and (min-width: 810px) {
-          max-width: 734px;
-        }
-
-        @media only screen and (min-width: 1920px) {
-          max-width: 100%;
-        }
-
-        @media only screen and (min-width: 2560px) {
-          max-width: 1876px;
-        }
-
-        > a {
-          display: flex;
-          justify-content: space-between;
-          text-decoration: none;
-          padding: 0.7rem;
-
-          > span:first-child {
-            font-size: small;
-            color: var(--color-primary);
-          }
-
-          > span:last-child {
-            color: var(--color-W);
-            text-transform: capitalize;
-            font-style: italic;
-            font-size: smaller;
-          }
-
-          &:focus,
-          &:hover {
-            & > span:first-child {
-              color: var(--color-B);
-            }
-
-            & > span:last-child {
-              color: var(--color-secondary);
-            }
-          }
-
-          &:active {
-
-            & > span:last-child,
-            & > span:first-child {
-              color: var(--color-W);
-            }
-          }
-        }
-
-        @media screen and (min-width: 810px) {
-          > a {
-            > span:first-child {
-              font-size: medium;
-            }
-
-            > span:last-child {
-              font-size: small;
-            }
-          }
-        }
-
-        @media only screen and (min-width: 1920px) {
-          > a {
-            > span:first-child {
-              font-size: large;
-            }
-
-            > span:last-child {
-              font-size: medium;
-            }
-          }
-        }
-
-        @media only screen and (min-width: 2560px) {
-          > a {
-            > span:first-child {
-              font-size: larger;
-            }
-
-            > span:last-child {
-              font-size: large;
-            }
-          }
-        }
-      }
-
-      li:nth-child(1) {
-        top: 20px;
-        z-index: 1;
-      }
-
-      li:nth-child(2) {
-        top: 60px;
-        z-index: 2;
-      }
-
-      li:nth-child(3) {
-        top: 100px;
-        z-index: 3;
-      }
-
-      li:nth-child(4) {
-        top: 140px;
-        z-index: 4;
-      }
-
-      li:nth-child(5) {
-        top: 180px;
-        z-index: 5;
-      }
-    }
-  }
-} */

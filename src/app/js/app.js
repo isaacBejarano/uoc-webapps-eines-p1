@@ -20,8 +20,9 @@ function renderList(data){
 	const ul = document.getElementById('last-news-list').children;
 
 	for (let i = 0; i < ul.length; i++) {
-		const li = ul[i];				
-		const anchor = li.children[0];	
+		const li = ul[i];
+		const p = li.children[0];
+		const anchor = p.children[0];	
 		if (updateListAnchorXorFail(anchor, i, data)) console.error(`Error parsing homepage's "News" section. List element ${i} failed rendering.`);	
 	}
 }
