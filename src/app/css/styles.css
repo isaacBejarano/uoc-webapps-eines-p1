@@ -410,15 +410,15 @@ body > main:where(.categories, .article, .about, .references) {
 
 @keyframes fade-in-arrow {
   0% {
-    opacity: 0;
-  }
-
-  40% {
-    opacity: 0;
+    fill: transparent;
   }
 
   50% {
-    opacity: 1;
+    fill: var(--color-light-grey);
+  }
+
+  100% {
+    fill: transparent;
   }
 }
 
@@ -483,6 +483,10 @@ body > main:where(.index) {
           top: 75vh;
         }
 
+        blockquote {
+          margin-bottom: 1rem;
+        }
+
         p {
           animation-name: fade-in-quote;
           animation-duration: 6s;
@@ -492,17 +496,7 @@ body > main:where(.index) {
           margin-bottom: 0;
         }
 
-        blockquote {
-          margin-bottom: 1rem;
-        }
-
         > div {
-          animation-name: fade-in-arrow;
-          animation-duration: 10s;
-          animation-fill-mode: forwards;
-          transition-timing-function: ease-in;
-          color: var(--color-light-grey);
-          text-align: right;
           position: absolute;
           bottom: 2vh;
           right: 8vw;
@@ -516,21 +510,37 @@ body > main:where(.index) {
             right: 2vw;
           }
 
-          p {
+          > svg {
             display: block;
-            color: var(--color-light-W);
-            border: 1px solid var(--color-W);
-            border-radius: 100%;
-            z-index: 5;
-            cursor: pointer;
-            padding: 0.5rem 0.7rem;
+            margin-bottom: 0.5rem;
 
-            @media screen and (min-width: 810px) {
-              padding: 0.5rem 0.8rem;
+            path {
+              fill: transparent;
+              animation-name: fade-in-arrow;
+              transition-timing-function: ease-out;
+              animation-iteration-count: 6;
+              animation-fill-mode: forwards;
             }
+          }
 
-            @media screen and (min-width: 2560px) {
-              padding: 0.5rem 0.9rem;
+          svg:nth-child(1) {
+            path {
+              animation-delay: 4s;
+              animation-duration: 1s;
+            }
+          }
+
+          svg:nth-child(2) {
+            path {
+              animation-delay: 4.25s;
+              animation-duration: 1s;
+            }
+          }
+
+          svg:nth-child(3) {
+            path {
+              animation-delay: 4.5s;
+              animation-duration: 1s;
             }
           }
         }
