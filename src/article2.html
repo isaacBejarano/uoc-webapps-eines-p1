@@ -16,7 +16,10 @@
 
 	<main class="article">
 		<article>
-			<h1>Ceremony of tea in the Sahara</h1>
+			<header>
+				<div class="thumbnail thumb-2"></div>
+				<h1>Ceremony of tea in the Sahara</h1>
+			</header>
 
 			<section>
 				<h2>Ceremony of tea in the Sahara</h2>
@@ -116,6 +119,25 @@
 						is so characteristic of the Sahrawi tea.
 					</li>
 				</ul>
+
+				<figure>
+					<img srcset="/src/assets/img/tea_305.jpg 305w, /src/assets/img/tea_500.jpg 500w, /src/assets/img/tea_810.jpg 810w"
+							 sizes="(max-width: 800px) 305px, (max-width: 1800px) 500px, 810px"
+							 src="/src/assets/img/tea_305.jpg"
+							 alt="Glass of Algerian tea standing on a Sahara's dune.">
+					<figcaption>
+						<span class="figcaption-text">
+							HOUHOU. 2014. [online]. Wikipedia [accessed: 2024/12/29].
+							Available at:
+						</span>
+						<a class="link-standalone"
+							 href="https://commons.wikimedia.org/wiki/File:Tea_algerian_sahara.jpg"
+							 target="_blank" rel="noreferrer">
+							https://commons.wikimedia.org/wiki/File:Tea_algerian_sahara.jpg
+						</a>
+					</figcaption>
+				</figure>
+
 				<p>
 					Such is the importance that the Berbers overlook tea that, on many occasions, paid large
 					amounts of
@@ -151,8 +173,13 @@
 					Saharans and by visitors who are lucky to enjoy it.
 				</p>
 			</section>
-
 		</article>
+
+		<!-- SVG template -->
+		<include src="src/assets/svg/logo_clipper_100.svg"> </include>
+		<include src="src/assets/svg/logo_clipper_150.svg"> </include>
+		<include src="src/assets/svg/logo_clipper_200.svg"> </include>
+		<include src="src/assets/svg/logo_clipper_250.svg"> </include>
 	</main>
 
 	<include src="src/app/includes/footer.html"> </include>

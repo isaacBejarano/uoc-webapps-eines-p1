@@ -19,7 +19,10 @@
 
   <main class="article">
     <article>
-      <h1>Growing food in the Sahara</h1>
+      <header>
+        <div class="thumbnail thumb-4"></div>
+        <h1>Growing food in the Sahara</h1>
+      </header>
 
       <section>
         <p>
@@ -27,19 +30,6 @@
             using lo-fi tech that's widely available
           </b>
         </p>
-
-        <figure>
-          <div class="responsive-iframe">
-            <iframe src="https://www.youtube.com/embed/3aZ8E7hj8VU?si=x7qpZ-cv4ufdO8sx"
-                    title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-            </iframe>
-          </div>
-          <figcaption>
-            <span class="figcaption-text"> Sahara Forest Project: From vision to reality </span>
-          </figcaption>
-        </figure>
 
         <p>
           In one of the world's driest places, water is flowing and crops are growing.
@@ -52,6 +42,7 @@
           challenges of climate change and water scarcity. And this futuristic farm is just
           getting started.
         </p>
+
         <p>
           The whole place runs on sunlight and seawater. Solar panels provide power for a system
           that
@@ -68,6 +59,24 @@
           the farm and other nearby businesses into fertiliser, so the farm enriches the soil
           rather than degrading it.
         </p>
+
+        <figure>
+          <img srcset="/src/assets/img/forest_project_305.jpg 305w, /src/assets/img/forest_project_500.jpg 500w, /src/assets/img/forest_project_810.jpg 810w"
+               sizes="(max-width: 800px) 305px, (max-width: 1800px) 500px, 810px"
+               src="/src/assets/img/forest_project_305.jpg"
+               alt="An algerian man of Kel Ahaggar heritage cooks Taguella in hot ashes.">
+          <figcaption>
+            <span class="figcaption-text">
+              Sahara Forest Project. 2011. [online]. [accessed:
+              2024/12/29]. Available at:
+            </span>
+            <a class="link-standalone"
+               href="https://farm5.static.flickr.com/4337/36909484042_1da02a3bd2_b.jpg"
+               target="_blank"
+               rel="noreferrer">https://farm5.static.flickr.com/4337/36909484042_1da02a3bd2_b.jpg</a>
+          </figcaption>
+        </figure>
+
         <p>
           Kjetil Stake, managing director of the Sahara Forest Project, says that too often, land
           is destroyed to make food.
@@ -115,8 +124,27 @@
             that change much
             faster</q>.
         </p>
+
+        <figure>
+          <div class="responsive-iframe">
+            <iframe src="https://www.youtube.com/embed/3aZ8E7hj8VU?si=x7qpZ-cv4ufdO8sx"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+          </div>
+          <figcaption>
+            <span class="figcaption-text"> Sahara Forest Project: From vision to reality </span>
+          </figcaption>
+        </figure>
       </section>
     </article>
+
+    <!-- SVG template -->
+    <include src="src/assets/svg/logo_clipper_100.svg"> </include>
+    <include src="src/assets/svg/logo_clipper_150.svg"> </include>
+    <include src="src/assets/svg/logo_clipper_200.svg"> </include>
+    <include src="src/assets/svg/logo_clipper_250.svg"> </include>
   </main>
 
   <include src="src/app/includes/footer.html"> </include>

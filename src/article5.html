@@ -21,7 +21,10 @@
 
   <main class="article">
     <article>
-      <h1>The Great Green Wall</h1>
+      <header>
+        <div class="thumbnail thumb-5"></div>
+        <h1>The Great Green Wall</h1>
+      </header>
 
       <section>
         <p>
@@ -35,19 +38,20 @@
         </p>
 
         <figure>
-          <div class="responsive-iframe">
-            <iframe src="https://www.youtube.com/embed/PQAktYhICOQ?si=iWx68V-hjUqTF88a"
-                    title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-            </iframe>
-          </div>
+          <img srcset="/src/assets/img/green_wall_305.jpg 305w, /src/assets/img/green_wall_500.jpg 500w, /src/assets/img/green_wall_810.jpg 810w"
+               sizes="(max-width: 800px) 305px, (max-width: 1800px) 500px, 810px"
+               src="/src/assets/img/green_wall_305.jpg"
+               alt="Map of route of Great Green Wall, participating countries and Sahel.">
           <figcaption>
             <span class="figcaption-text">
-              How the UN is Reforesting the Sahara Desert into a Farmland Oasis - Great Green Wall
-              of
-              Africa
+              SEVGART. 2021. <i>The Sahel region (brown), proposed Great Green Wall (green), and
+                participating countries (white)</i>
+              [online]. Wikipedia [accessed: 2024/12/29]. Available at:
             </span>
+            <a class="link-standalone"
+               href="https://commons.wikimedia.org/wiki/File:Great_green_wall_map.svg"
+               target="_blank"
+               rel="noreferrer">https://commons.wikimedia.org/wiki/File:Great_green_wall_map.svg</a>
           </figcaption>
         </figure>
 
@@ -61,7 +65,9 @@
           support this
           game-changing initiative.
         </p>
+      </section>
 
+      <section>
         <h2>Objectives</h2>
 
         <p>
@@ -128,8 +134,31 @@
           in collaboration with the Oscar-nominated filmmaker Fernando Meirelles and Malian
           singer Inna Modja.
         </p>
+
+        <figure>
+          <div class="responsive-iframe">
+            <iframe src="https://www.youtube.com/embed/PQAktYhICOQ?si=iWx68V-hjUqTF88a"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+          </div>
+          <figcaption>
+            <span class="figcaption-text">
+              How the UN is Reforesting the Sahara Desert into a Farmland Oasis - Great Green Wall
+              of
+              Africa
+            </span>
+          </figcaption>
+        </figure>
       </section>
     </article>
+
+    <!-- SVG template -->
+    <include src="src/assets/svg/logo_clipper_100.svg"> </include>
+    <include src="src/assets/svg/logo_clipper_150.svg"> </include>
+    <include src="src/assets/svg/logo_clipper_200.svg"> </include>
+    <include src="src/assets/svg/logo_clipper_250.svg"> </include>
   </main>
 
   <include src="src/app/includes/footer.html"> </include>
