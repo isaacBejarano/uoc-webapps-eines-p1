@@ -106,7 +106,7 @@ h2 {
   }
 }
 
-p {
+:where(p, .p) {
   margin-bottom: 1rem;
   font-size: small;
   line-height: 1.5;
@@ -217,6 +217,8 @@ body > nav {
   }
 
   > ul {
+    justify-content: left;
+
     > li {
       margin: 0 1rem 0.5rem;
 
@@ -483,7 +485,7 @@ body > main:where(.index) {
 
         p {
           animation-name: fade-in-quote;
-          animation-duration: 8s;
+          animation-duration: 6s;
           animation-fill-mode: forwards;
           transition-timing-function: ease-in-out;
           color: var(--color-light-grey);
@@ -496,7 +498,7 @@ body > main:where(.index) {
 
         > div {
           animation-name: fade-in-arrow;
-          animation-duration: 12s;
+          animation-duration: 10s;
           animation-fill-mode: forwards;
           transition-timing-function: ease-in;
           color: var(--color-light-grey);
@@ -595,13 +597,56 @@ body > main:where(.index) {
 }
 
 /* MAIN - article */
+body[class^="pag-article"] main {}
+
 /* MAIN - about */
 body > main:where(.article, .about) {
   section {
     margin-bottom: 2.5rem;
     clear: both;
 
-    figure:has(img) {
+    figure.square:has(img) {
+      float: left;
+      margin-bottom: 1rem;
+      margin-right: 1.5rem;
+      width: var(--img-mobile);
+
+      @media screen and (min-width: 810px) {
+        width: var(--img-tablet);
+        margin-top: 0.5rem;
+      }
+
+      @media screen and (min-width: 2560px) {
+        width: var(--img-desktop);
+      }
+
+      img {
+        width: 100%;
+        display: block;
+        border: 1px solid var(--color-gold);
+        border-radius: 5px;
+      }
+    }
+
+    figure.portrait:has(img) {
+      float: left;
+      margin-bottom: 1rem;
+      margin-right: 3rem;
+      width: var(--img-mobile);
+
+      @media screen and (min-width: 810px) {
+        max-width: var(--img-tablet);
+      }
+
+      img {
+        width: 100%;
+        display: block;
+        border: 1px solid var(--color-gold);
+        border-radius: 5px;
+      }
+    }
+
+    figure:not(.portrait, .square):has(img) {
       float: left;
       width: 100%;
       margin-bottom: 1rem;
@@ -660,6 +705,7 @@ body > main:where(.article, .about) {
       > figcaption {
         overflow-wrap: break-word;
         margin-top: 0.3rem;
+        margin-bottom: 1rem;
         font-size: x-small;
 
         @media screen and (min-width: 810px) {
@@ -682,6 +728,16 @@ body > main:where(.article, .about) {
           content: "\2197";
           margin-right: 0.2em;
         }
+      }
+    }
+
+    ul {
+      list-style: initial;
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+
+      li {
+        margin-bottom: 0.25rem;
       }
     }
   }
