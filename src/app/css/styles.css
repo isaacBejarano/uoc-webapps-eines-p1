@@ -436,7 +436,7 @@ body > main:where(.index) {
       z-index: -1;
       height: 92vh;
       margin-bottom: 0;
-      background-image: url("/src/assets/img/dunes_1920.jpg");
+      background-image: url("/src/assets/img/dunes_1080.jpg?as=webp");
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
@@ -1027,11 +1027,11 @@ body > main.references {
 
 /* thumbnails */
 .thumb-1 {
-  background-image: url("/src/assets/img/sandbread_305.jpg");
+  background-image: url("/src/assets/img/sandbread_305.jpg?as=webp");
 }
 
 .thumb-2 {
-  background-image: url("/src/assets/img/tea_305.jpg");
+  background-image: url("/src/assets/img/tea_305.jpg?as=webp");
 }
 
 .thumb-3 {
@@ -1039,11 +1039,11 @@ body > main.references {
 }
 
 .thumb-4 {
-  background-image: url("/src/assets/img/forest_project_305.jpg");
+  background-image: url("/src/assets/img/forest_project_305.jpg?as=webp");
 }
 
 .thumb-5 {
-  background-image: url("/src/assets/img/green_wall_305.jpg");
+  background-image: url("/src/assets/img/green_wall_305.jpg?as=webp");
 }
 
 /* debug */

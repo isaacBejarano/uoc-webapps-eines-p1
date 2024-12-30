@@ -18,12 +18,31 @@ npm run build
  to compile the source code, apply all the preprocessors and save that distributable compilation in the folder "dist".
 
 # Parcel's built-in Post and Pre Processors
+
 Parcel comes with `PostCSS` and `PostHTML`. Those dependencies solve most of the pre and post-processing of CSS and HTML. However, some features are not included. If You need to add those features, you can use **PostCSS**  and **PostHTML** plugins, be defining them and configuing them in its respective configuraton files: **.postcssrc**, and **.posthtmlrc**. Just place the **plug-in** names in the `plugins` field -every member of that object should be a different plugin. Furthermore, every plugin defined, may have a nested object for configuration.
 
 For more informationon **PostCSS** configurations, please visit:
 https://parceljs.org/languages/css/#postcss
 and
 https://parceljs.org/languages/html/#posthtml
+
+# Parcel's built-in Image Optimization with Sharp
+
+For optimizing **PNG** and **JPG** images, we'll use Parcel's built-inb dependency **Sharp**. The dependency is already installed in the **package.json** once we created the **sharp.config.json** file. We configured a `loosy` compression for JPEG and PNG as well as WebP formats. We will use `WebP` as our prefered image type. The config is set to
+```
+"quality": 85
+```
+You should never need to reconfig that.
+To apply the conversion to any given JPG or PNG image just add this string `?as=webp` at the end of the image import declaration in **JavaScript**, **HTML** or **CSS**. For example, to transform a JPG image being used in the "background-image" CSS property, we would do this:
+```
+background-image: url("/src/assets/img/acacus_305.jpg?as=webp");
+
+```
+And for example, for tranforming the import in an HTML "img" tag, we sould do this:
+```
+src="/src/assets/img/green_sahara_305.jpg?as=webp"
+
+```
 
 
 # devDependencies
