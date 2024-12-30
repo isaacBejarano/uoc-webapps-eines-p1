@@ -1050,5 +1050,3 @@ body > main.references {
 .red {
   outline: 1px solid red;
 }
-
-/* FIXME: Firefox not rendering SVG thumbs */
