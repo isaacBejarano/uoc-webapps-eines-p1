@@ -43,6 +43,7 @@ And for example, for tranforming the import in an HTML "img" tag, we sould do th
 src="/src/assets/img/green_sahara_305.jpg?as=webp"
 
 ```
+For more informationon `Sharp` configuration within **Parcel**, visit: https://parceljs.org/recipes/image/
 
 
 # devDependencies
