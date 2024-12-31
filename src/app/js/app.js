@@ -118,13 +118,14 @@ function renderList(data){
 function updateListAnchorXorFail(anchor, i, data)  {
   if(anchor === undefined) return true;
   if(!anchor.classList.contains('last-news-link')) return true;
-
+  
   anchor.href = data[i].href;
   
   const aChildren = anchor.children;
-  if(aChildren.length !== 2 || !aChildren[0].classList.contains('news-link-title') || !aChildren[1].classList.contains('news-link-category')) return true;
+  if(aChildren.length !== 3 || !aChildren[0].classList.contains('thumbnail') || !aChildren[1].classList.contains('news-link-title') || !aChildren[2].classList.contains('news-link-category')) return true;
   
-  const [title, category ] = aChildren;	
+  const [thumb, title, category ] = aChildren;	
+  thumb.classList.add(`thumb-${data[i].id}`);
   title.textContent = data[i].title;
   category.innerText = data[i].category;	
 }

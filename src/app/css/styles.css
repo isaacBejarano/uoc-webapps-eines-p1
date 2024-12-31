@@ -652,14 +652,65 @@ body > main:where(.index) {
             color: var(--color-gold)
           }
 
-          > [href] {
-            &::after {
-              content: "\2197";
-              margin-right: 0.2em;
+          > p > [href] {
+
+            &:focus,
+            &:hover {
+              color: var(--color-red);
+
+              span.thumbnail {
+                mix-blend-mode: luminosity;
+              }
             }
 
-            > span:last-of-type {
-              color: var(--color-grey)
+            display: flex;
+            align-items: baseline;
+
+            /* CSS W and H mach svg W and W */
+            > span.thumbnail {
+              display: block;
+              clip-path: url(#logoClipper100);
+              width: 100px;
+              height: 59px;
+              margin-right: 0.5rem;
+
+              &.thumb-1 {
+                background-position: 80% 400%;
+                background-size: 120%;
+              }
+
+              &.thumb-2 {
+                background-position: 320% 435%;
+                background-size: 105%;
+              }
+
+              &.thumb-3 {
+                background-position: 520% 665%;
+                background-size: 105%;
+              }
+
+              &.thumb-4 {
+                background-position: 195% 380%;
+                background-size: 120%;
+              }
+
+              &.thumb-5 {
+                background-position: 100% 0%;
+                background-size: 125%;
+              }
+            }
+
+            > span.news-link-title {
+              margin-right: 0.5rem;
+            }
+
+            > span.news-link-category {
+              color: var(--color-grey);
+
+              &::after {
+                content: "\2197";
+                margin-right: 0.2em;
+              }
             }
           }
         }
@@ -724,52 +775,6 @@ body[class^="pag-article"] main {
       }
     }
 
-    /* div.thumbnail {
-      height: 100px;
-      width: 100px;
-      margin: 0 auto;
-      clip-path: polygon(58% 80%, 70% 65%, 100% 100%, 0 100%, 35% 50%);
-
-      @media screen and (min-width: 810px) {
-        height: 150px;
-        width: 150px;
-      }
-
-      @media screen and (min-width: 1920px) {
-        height: 200px;
-        width: 200px;
-      }
-
-      @media screen and (min-width: 2560px) {
-        height: 250px;
-        width: 250px;
-      }
-
-      &.thumb-1 {
-        background-position: 55% 215%;
-        background-size: 130%;
-      }
-
-      &.thumb-2 {
-        background-position: 205% 175%;
-        background-size: 110%;
-      }
-
-      &.thumb-3 {
-        background-position: 75% 165%;
-        background-size: 105%;
-      }
-
-      &.thumb-4 {
-        background-position: 92% 323%;
-        background-size: 130%;
-      }
-
-      &.thumb-5 {
-        background-position: 40% 190%;
-        background-size: 125%;
-      }
-    } */
     h1 {
       margin-top: 0.5rem;
     }
