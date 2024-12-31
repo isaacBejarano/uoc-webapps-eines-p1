@@ -609,7 +609,7 @@ body > main:where(.index) {
       }
     }
 
-    > section:first-of-type {
+    > div {
       position: sticky;
       bottom: 0;
       z-index: -2;
@@ -628,15 +628,12 @@ body > main:where(.index) {
       }
     }
 
-    > section:last-of-type {
-      background-color: var(--color-W);
-      position: sticky;
-      /* Don't z-index here or links won't work */
-    }
-
     > section {
       padding: 2rem;
+      background-color: var(--color-W);
+      position: sticky;
 
+      /* Don't z-index here or links won't work */
       > h2 {
         margin-bottom: 0.8rem;
       }
@@ -680,23 +677,51 @@ body > main:where(.index) {
               }
 
               &.thumb-2 {
-                background-position: 320% 435%;
-                background-size: 105%;
+                background-position: 100% 20%;
+                background-size: 115%;
               }
 
               &.thumb-3 {
-                background-position: 520% 665%;
-                background-size: 105%;
+                background-position: 265% 30%;
+                background-size: 110%;
               }
 
               &.thumb-4 {
-                background-position: 195% 380%;
-                background-size: 120%;
+                background-position: 98% 0%;
+                background-size: 150%;
               }
 
               &.thumb-5 {
-                background-position: 100% 0%;
-                background-size: 125%;
+                background-position: 73% -10%;
+                background-size: 135%;
+              }
+
+              /* TODO: responsive */
+              @media screen and (min-width: 810px) {
+                &.thumb-1 {
+                  background-position: 80% 400%;
+                  background-size: 120%;
+                }
+
+                &.thumb-2 {
+                  background-position: 285% 45%;
+                  background-size: 105%;
+                }
+
+                &.thumb-3 {
+                  background-position: 265% 30%;
+                  background-size: 110%;
+                }
+
+                &.thumb-4 {
+                  background-position: 200% 0%;
+                  background-size: 120%;
+                }
+
+                &.thumb-5 {
+                  background-position: 100% -10%;
+                  background-size: 125%;
+                }
               }
             }
 
@@ -765,7 +790,7 @@ body[class^="pag-article"] main {
       }
 
       &.thumb-4 {
-        background-position: 195% 380%;
+        background-position: 195% 385%;
         background-size: 120%;
       }
 
