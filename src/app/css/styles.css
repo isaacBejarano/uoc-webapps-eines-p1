@@ -1,14 +1,17 @@
 /* Variables */
 :root {
-  --color-primary: #487779;
-  --color-secondary: #024883;
-  --color-blue: royalblue;
+  --color-primary: rgb(67, 110, 112);
+  --color-secondary: rgb(2, 72, 131);
+  --color-blue: rgb(39, 66, 148);
   --color-red: rgb(113 2 2);
   --color-B: rgb(2, 45, 49);
+  --color-B-contrast: rgb(0, 13, 14);
   --color-W: rgb(248, 252, 252);
-  --color-gold: #8c7f46;
+  --color-gold: rgb(140, 127, 70);
+  --color-gold-contrast: rgb(60, 54, 29);
   --color-light-grey: rgb(219, 235, 235);
   --color-grey: rgb(102, 124, 124);
+  --color-grey-contrast: rgb(80, 98, 98);
   /* Variables cannot be used as @media query args */
   --w-iPhone: 390px;
   --w-iPad: 810px;
@@ -86,7 +89,7 @@ h1 {
 }
 
 h2 {
-  color: var(--color-gold);
+  color: var(--color-gold-contrast);
   font-weight: lighter;
   margin-bottom: 0.2rem;
   font-size: large;
@@ -356,7 +359,7 @@ body > footer {
 
     p:has(abbr) {
       margin-bottom: 0;
-      color: var(--color-grey);
+      color: var(--color-grey-contrast);
       display: block;
       text-align: center;
       font-size: x-small;
@@ -515,7 +518,7 @@ body > main:where(.index) {
         position: absolute;
         top: 15vh;
         width: 100%;
-        color: var(--color-primary);
+        color: var(--color-gold-contrast);
         animation-name: fade-in;
         animation-duration: 4s;
         animation-fill-mode: forwards;
@@ -554,7 +557,7 @@ body > main:where(.index) {
           animation-duration: 6s;
           animation-fill-mode: forwards;
           transition-timing-function: ease-in-out;
-          color: var(--color-light-grey);
+          color: var(--color-W);
           margin-bottom: 0;
         }
 
@@ -613,7 +616,7 @@ body > main:where(.index) {
       position: sticky;
       bottom: 0;
       z-index: -2;
-      color: var(--color-W);
+      color: var(--color-B-contrast);
       background-color: var(--color-gold);
       padding: 1rem 2rem;
       border: 1px solid transparent;
@@ -730,7 +733,7 @@ body > main:where(.index) {
             }
 
             > span.news-link-category {
-              color: var(--color-grey);
+              color: var(--color-grey-contrast);
 
               &::after {
                 content: "\2197";
