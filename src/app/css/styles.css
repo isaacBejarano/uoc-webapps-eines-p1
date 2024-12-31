@@ -284,53 +284,118 @@ body[class^="pag-article"] > nav:nth-of-type(2) {
 }
 
 /* COMPO - footer */
-footer {
+body > footer {
   width: 100vw;
   position: fixed;
-  bottom: -1px;
-  padding: 0.5rem 0;
+  bottom: 0;
+  padding-bottom: 0.5rem;
   border: 1px solid var(--color-primary);
   border-radius: 5px 5px 0 0;
   box-shadow: 0px -3px 10px -4px var(--color-primary);
   text-align: center;
 
-  p:has(abbr) {
-    margin-bottom: 0;
-    color: var(--color-grey);
-    display: block;
-    text-align: center;
-    font-size: x-small;
+  @media screen and (min-width: 1920px) {
+    position: initial;
+  }
 
-    @media screen and (min-width: 810px) {
-      font-size: small;
+  nav ol {
+    padding-top: 0.5rem;
+
+    @media screen and (min-width: 2560px) {
+      padding-top: 0.8rem;
+    }
+  }
+
+  nav ul {
+    padding-bottom: 0.5rem;
+
+    @media screen and (min-width: 2560px) {
+      padding-bottom: 0.8rem;
+    }
+  }
+
+  nav :where(ul, ol) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+      margin: 0.5rem 0.8rem;
+      font-size: smaller;
+
+      @media screen and (min-width: 810px) {
+        font-size: medium;
+      }
+
+      @media screen and (min-width: 1920px) {
+        font-size: large;
+      }
+
+      @media screen and (min-width: 2560px) {
+        font-size: x-large;
+      }
+    }
+  }
+
+  nav ul {
+    text-decoration: underline;
+    border: 1px solid var(--color-primary);
+    border-width: 0 0 1px 0;
+  }
+
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      margin: 0.5rem 1.2rem;
+      border-radius: 20%;
+      border: 1px solid var(--color-primary);
     }
 
-    @media only screen and (min-width: 1920px) {
-      font-size: medium;
-    }
+    p:has(abbr) {
+      margin-bottom: 0;
+      color: var(--color-grey);
+      display: block;
+      text-align: center;
+      font-size: x-small;
 
-    @media only screen and (min-width: 2560px) {
-      font-size: large;
+      @media screen and (min-width: 810px) {
+        font-size: small;
+      }
+
+      @media only screen and (min-width: 1920px) {
+        font-size: medium;
+      }
+
+      @media only screen and (min-width: 2560px) {
+        font-size: large;
+      }
     }
   }
 }
 
-body.pag-index:has(footer) footer {
+body:has(.pag-index) > footer {
+  /* to enable clicking, app.js will set z-index:3 when reached the bottom of viewpoint */
   position: sticky;
   bottom: -1px;
-  z-index: -3;
-
-  @media screen and (min-width: 1920px) {
-    position: fixed;
-    bottom: -1px;
-    z-index: 3;
-  }
 }
 
-body:not(.pag-index):has(footer) footer {
-  position: fixed;
-  bottom: -1px;
+.z-3 {
+  z-index: -3;
+}
+
+.z3 {
   z-index: 3;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
 }
 
 /* MAIN */
@@ -346,7 +411,6 @@ body > main:where(.article, .about, .references) [href] {
 }
 
 body > main:where(.categories, .article, .about, .references) {
-  margin-bottom: 3rem;
   padding: 1rem;
 
   @media screen and (min-width: 810px) {
@@ -423,8 +487,6 @@ body > main:where(.categories, .article, .about, .references) {
 }
 
 body > main:where(.index) {
-  margin-bottom: 3rem;
-
   article {
     @media screen and (min-width: 2560px) {
       max-width: var(--h-FullHD);
@@ -442,7 +504,7 @@ body > main:where(.index) {
       background-position: center;
 
       @media screen and (min-width: 1920px) {
-        height: 86vh;
+        height: 90vh;
       }
 
       @media screen and (min-width: 2560px) {
@@ -904,6 +966,10 @@ body > main.categories {
             &:focus,
             &:hover {
               color: var(--color-red);
+
+              span.thumbnail {
+                mix-blend-mode: luminosity;
+              }
             }
 
             flex-flow: column wrap;
@@ -1022,6 +1088,60 @@ body > main.references {
         }
       }
     }
+  }
+}
+
+/* MAIN spacing */
+body > main:where(.index) {
+  margin-bottom: 10rem;
+
+  @media screen and (min-width: 810px) {
+    margin-bottom: 9rem;
+  }
+
+  @media screen and (min-width: 1920px) {
+    margin-bottom: 1rem;
+  }
+
+  @media screen and (min-width: 2560px) {
+    margin-bottom: 2rem;
+  }
+}
+
+body > main:where(.categories) {
+  margin-bottom: 0;
+}
+
+body > main:where(.article) {
+  margin-bottom: 0;
+}
+
+body > main:where(.about) {
+  margin-bottom: 10rem;
+  margin-bottom: 9rem;
+
+  @media screen and (min-width: 1920px) {
+    margin-bottom: 1rem;
+  }
+
+  @media screen and (min-width: 2560px) {
+    margin-bottom: 2rem;
+  }
+}
+
+body > main:where(.references) {
+  margin-bottom: 11rem;
+
+  @media screen and (min-width: 810px) {
+    margin-bottom: 10rem;
+  }
+
+  @media screen and (min-width: 1920px) {
+    margin-bottom: 1rem;
+  }
+
+  @media screen and (min-width: 2560px) {
+    margin-bottom: 2rem;
   }
 }
 
