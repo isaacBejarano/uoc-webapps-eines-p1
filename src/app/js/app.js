@@ -9,8 +9,8 @@ if(location.pathname === '/'){
 
 // AUX
 function footer() {
-  const footer = this.document.querySelector('.footer');
-  const nav = this.document.querySelector('.footer nav');
+  const footer = document.querySelector('.footer');
+  const nav = document.querySelector('.footer nav');
   
   if(!footer || !nav) {
     console.error('Error showing footer links.')
@@ -60,8 +60,8 @@ function footer() {
 }
 
 function footerHomepage() {
-  const footer = this.document.querySelector('.footer');
-  const nav = this.document.querySelector('.footer nav');
+  const footer = document.querySelector('.footer');
+  const nav = document.querySelector('.footer nav');
 
   if(!footer) {
     console.error('Error showing footer.')
