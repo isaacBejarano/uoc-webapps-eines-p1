@@ -811,7 +811,7 @@ body[class^="pag-article"] main {
 
 /* MAIN - about */
 body > main:where(.article, .about) {
-  section {
+  :where(section, .section) {
     margin-bottom: 2.5rem;
     clear: both;
 
