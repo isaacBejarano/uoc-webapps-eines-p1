@@ -699,7 +699,7 @@ body > main:where(.index) {
                 background-size: 135%;
               }
 
-              /* TODO: responsive */
+              /* responsive */
               @media screen and (min-width: 810px) {
                 &.thumb-1 {
                   background-position: 80% 400%;
@@ -889,6 +889,15 @@ body > main:where(.article, .about) {
       }
     }
 
+    /* FIXME: una manera más facil de hacerlo es usando aspect-ratio sobre el mismo iframe */
+    /* figure:has(iframe) {
+      .responsive-iframe {
+        iframe {
+          width: 100%;
+          aspect-ratio: 16/9;
+        }
+      }
+    } */
     figure:has(iframe) {
       .responsive-iframe {
         position: relative;
@@ -898,8 +907,6 @@ body > main:where(.article, .about) {
         padding-top: 56.25%;
 
         iframe {
-          border: 1px solid var(--color-gold);
-          border-radius: 5px;
           position: absolute;
           top: 0;
           left: 0;

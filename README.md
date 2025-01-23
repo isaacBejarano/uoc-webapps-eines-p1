@@ -142,9 +142,9 @@ We are also using **postHTML** with the plugin **posthtml-include** to be able t
 
 # Responsive Images
 
-For the semantic images, we are using the `<figure>` tag and the `<img>` tag. The latest defines a default size for small screens (aka **mobile first** approach), and then loads biger sizes depending on 4 screen breakpoints (iPad, FullHD and 4K) via the `srcset` and the `sizes` attributes. Bare in mind the preparatoin of those images as **assets** in case you want to incorporate more images to the project.
+For the semantic images, we are using the `<figure>` tag and the `<img>` tag. The latest defines a default size for small screens (aka **mobile first** approach), and then loads biger sizes depending on 4 screen breakpoints (iPad, FullHD and 2K+) via the `srcset` and the `sizes` attributes. Bare in mind the preparation of those images as **assets** in case you want to incorporate more images to the project.
 
-The embedded videos unfortunatelly have no such attributes for responsiveness, but we have used CSS classes which need to be place din this order:
+The embedded videos unfortunatelly have no such attributes for responsiveness, but we have used CSS classes which need to be placed in this order:
 
 ```
 <div class="responsive-iframe-wrapper">
@@ -154,6 +154,6 @@ The embedded videos unfortunatelly have no such attributes for responsiveness, b
 
 # Responsive Layout
 
-The layout of media and paragraphs present in the `<article>` tag follows a structure of 1 column for mobile, and 2 columns for iPad and bigger screens. To use it, declare the `.columns-md` class in those wrappers serving for that porpouse, and then placve all the content inside maximum to children `<div>` to mark the 2 columns.
+The layout of media and paragraphs present in the `<article>` tag follows a structure of 1 column for mobile, and 2 columns for iPad and bigger screens. To use it, declare the `.columns-md` class in those wrappers serving for that porpouse, and then place all the content inside maximum 2 children `<div>` to mark the 2 columns.
 
 Please, keep the responsive layout consistent -it will add margins to inner `h2` and `iframes` and `img` tags, so they align automaticallly with the paragraphs.

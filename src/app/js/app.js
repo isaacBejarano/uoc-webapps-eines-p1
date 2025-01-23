@@ -1,5 +1,5 @@
 /* Sort list randomly @index.html */
-import json from "../data/news.json";
+import json from "../data/news.json" with { type: "json" };
 
 if(location.pathname === '/'){
   sortList(json);
