@@ -30,6 +30,7 @@
 		"node": "20 || >=22"
 	},
 	"dependencies": {
+		"@justinribeiro/lite-youtube": "^1.6.0",
 		"svgo": "^3.3.2"
 	}
 }
