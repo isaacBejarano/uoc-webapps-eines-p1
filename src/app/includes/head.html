@@ -7,8 +7,14 @@
 				content="Web portal about the exciting and unknown nature of the Sahara and its people.">
 	<link rel="icon" href="/src/assets/favicon/favicon.png?as=webp" type="image/x-icon">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- JS -->
 	<link rel="modulepreload" href="/src/app/js/app.js">
 	<script type="module" src="/src/app/js/app.js"></script>
+	<!-- CSS -->
 	<link rel="preload" href="/src/app/css/styles.css" as="style">
 	<link rel="stylesheet" href="/src/app/css/styles.css">
+	<!-- Preload LCP images to start loading with the stylesheet they're referenced in. -->
+	<link rel="preload" fetchpriority="high" as="image" href="/src/assets/img/dunes_1080.jpg?as=webp"
+				type="image/webp">
+
 </head>
