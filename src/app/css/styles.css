@@ -889,32 +889,12 @@ body > main:where(.article, .about) {
       }
     }
 
-    /* FIXME: una manera más facil de hacerlo es usando aspect-ratio sobre el mismo iframe */
-    /* figure:has(iframe) {
-      .responsive-iframe {
-        iframe {
-          width: 100%;
-          aspect-ratio: 16/9;
-        }
-      }
-    } */
-    figure:has(iframe) {
-      .responsive-iframe {
-        position: relative;
-        overflow: hidden;
+    figure:has(lite-youtube) {
+      lite-youtube {
+        border-radius: 5px;
+        border: 1px solid var(--color-primary);
         width: 100%;
-        /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
-        padding-top: 56.25%;
-
-        iframe {
-          position: absolute;
-          top: 0;
-          left: 0;
-          bottom: 0;
-          right: 0;
-          width: 100%;
-          height: 100%;
-        }
+        aspect-ratio: 16/9;
       }
     }
 
