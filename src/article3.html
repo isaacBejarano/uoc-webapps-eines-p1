@@ -5,7 +5,7 @@
 <body class="pag-article-3">
   <include src="src/app/includes/header.html"> </include>
   <include src="src/app/includes/nav.html"> </include>
-  <!-- <nav>
+  <nav>
     <p> Related articles</p>
     <ul>
       <li>
@@ -17,7 +17,7 @@
         <a href="article5.html" class="article-link">The Great Green Wall</a>
       </li>
     </ul>
-  </nav> -->
+  </nav>
 
   <main class="article">
     <article>
@@ -34,15 +34,9 @@
           </b>
         </p>
 
-        <!-- FIXME: las imagenes no tienen altura: crean el CLS. -->
-
-        <figure class="square" style="aspect-ratio: 1/1; background-color: pink;">
-          <img src="/src/assets/img/green_sahara_305.jpg?as=webp" width="305" height="283"
+        <figure class="square">
+          <img src="/src/assets/img/green_sahara_810.jpg?as=webp" width="810" height="754"
                alt="Camels in El Menia, Ghardaia Province, Algeria.">
-          <!-- <img srcset="/src/assets/img/green_sahara_305.jpg?as=webp 305w, /src/assets/img/green_sahara_500.jpg?as=webp 500w, /src/assets/img/green_sahara_810.jpg?as=webp 810w"
-               sizes="(max-width: 800px) 305px, (max-width: 1800px) 500px, 810px"
-               src="/src/assets/img/green_sahara_305.jpg?as=webp"
-               alt="Camels in El Menia, Ghardaia Province, Algeria."> -->
           <figcaption>
             <span class="figcaption-text">
               KEROUILA, Waleed. <i>Camels</i> [online].
@@ -102,11 +96,10 @@
             long history.</q>
         </p>
 
-        <figure style="aspect-ratio: 16/9; background-color: pink;">
-          <img srcset="/src/assets/img/acacus_305.jpg?as=webp 305w, /src/assets/img/acacus_500.jpg?as=webp 500w, /src/assets/img/acacus_810.jpg?as=webp 810w"
-               sizes="(max-width: 800px) 305px, (max-width: 1800px) 500px, 810px"
-               src="/src/assets/img/acacus_305.jpg?as=webp"
-               alt="Arid environment of the Acacus Mountains.">
+        <figure>
+          <img src="/src/assets/img/acacus_810.jpg?as=webp"
+               alt="Arid environment of the Acacus Mountains." width="810" height="539"
+               loading="lazy">
           <figcaption>
             <span class="figcaption-text">
               GALUZZI, Luca. <i>Moving sand dunes, rocks and mountains in Tadrart Acacus a desert
