@@ -876,21 +876,15 @@ body > main:where(.article, .about) {
       margin-bottom: 1rem;
       width: 100%;
 
-      /* outline: 3px solid red;
-      background-color: pink; */
       img {
-        /* width: var(--img-mobile); */
-        /* height: auto; */
         width: 100%;
         height: 100%;
         display: block;
         border: 1px solid var(--color-gold);
         border-radius: 5px;
-        /* aspect-ratio: 16 / 9; */
-        /* object-fit: cover; */
       }
 
-      @media screen and (min-width: 810px) {
+      @media screen and (min-width: 806px) {
         width: var(--img-tablet);
         padding-top: 0.5rem;
         padding-right: 1rem;
