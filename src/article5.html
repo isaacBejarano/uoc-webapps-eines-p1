@@ -38,9 +38,15 @@
         </p>
 
         <figure>
-          <img src="/src/assets/img/green_wall_810.jpg?as=webp"
+          <img srcset="/src/assets/img/green_wall_305.jpg?as=webp 305w, /src/assets/img/green_wall_500.jpg?as=webp 500w, /src/assets/img/green_wall_810.jpg?as=webp 810w"
+               sizes="(max-width: 800px) 305px, (max-width: 1800px) 500px, 810px"
+               src="/src/assets/img/green_wall_305.jpg?as=webp"
                alt="Map of route of Great Green Wall, participating countries and Sahel."
-               width="810" height="494">
+               loading="lazy">
+
+          <!-- <img src="/src/assets/img/green_wall_305.jpg?as=webp"
+               alt="Map of route of Great Green Wall, participating countries and Sahel."
+               width="305" height="186"> -->
           <figcaption>
             <span class="figcaption-text">
               SEVGART. 2021. <i>The Sahel region (brown), proposed Great Green Wall (green), and
